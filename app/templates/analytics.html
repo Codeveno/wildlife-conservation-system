@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics - Wildlife Conservation System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/alerts">Alerts</a></li>
+                <li><a href="/species">Species Gallery</a></li>
+                <li><a href="/analytics">Analytics</a></li>
+            </ul>
+        </nav>
+        <h1>Analytics</h1>
+    </header>
+
+    <main>
+        <section class="analytics">
+            <h2>System Insights</h2>
+            <div class="stats">
+                <div class="stat-card">
+                    <p class="stat-value">25</p>
+                    <p class="stat-label">Animals Detected</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-value">3</p>
+                    <p class="stat-label">Intruders Flagged</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-value">2</p>
+                    <p class="stat-label">Predator Alerts</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Wildlife Conservation System</p>
+    </footer>
+</body>
+</html>

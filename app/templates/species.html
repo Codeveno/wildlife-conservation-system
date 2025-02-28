@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Species Gallery - Wildlife Conservation System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/alerts">Alerts</a></li>
+                <li><a href="/species">Species Gallery</a></li>
+                <li><a href="/analytics">Analytics</a></li>
+            </ul>
+        </nav>
+        <h1>Species Gallery</h1>
+    </header>
+
+    <main>
+        <section class="gallery">
+            <h2>Detected Species</h2>
+            <div class="species-grid">
+                <div class="species-card">
+                    <img src="{{ url_for('static', filename='images/elephant.jpg') }}" alt="Elephant">
+                    <p>Elephant</p>
+                </div>
+                <div class="species-card">
+                    <img src="{{ url_for('static', filename='images/lion.jpg') }}" alt="Lion">
+                    <p>Lion</p>
+                </div>
+                <div class="species-card">
+                    <img src="{{ url_for('static', filename='images/rhino.jpg') }}" alt="Rhino">
+                    <p>Rhino</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Wildlife Conservation System</p>
+    </footer>
+</body>
+</html>

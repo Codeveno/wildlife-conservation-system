@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alerts - Wildlife Conservation System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/alerts">Alerts</a></li>
+                <li><a href="/species">Species Gallery</a></li>
+                <li><a href="/analytics">Analytics</a></li>
+            </ul>
+        </nav>
+        <h1>Alerts</h1>
+    </header>
+
+    <main>
+        <section class="alerts">
+            <h2>Recent Alerts</h2>
+            <div class="alert-list">
+                <div class="alert">
+                    <p class="alert-message">Intruder detected at 12:34 PM!</p>
+                    <p class="alert-time">2 minutes ago</p>
+                </div>
+                <div class="alert">
+                    <p class="alert-message">Predator near prey at 1:20 PM!</p>
+                    <p class="alert-time">10 minutes ago</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Wildlife Conservation System</p>
+    </footer>
+</body>
+</html>
