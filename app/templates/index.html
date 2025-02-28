@@ -7,35 +7,44 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/dashboard">Dashboard</a></li>
-                <li><a href="/alerts">Alerts</a></li>
-                <li><a href="/species">Species Gallery</a></li>
-                <li><a href="/analytics">Analytics</a></li>
-            </ul>
-        </nav>
-        <h1>Wildlife Conservation System</h1>
-    </header>
 
     <!-- Background Video -->
-    <video autoplay muted loop id="background-video">
-        <source src="{{ url_for('static', filename='images/background.mp4') }}" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+    <div class="video-container">
+        <video id="background-video" autoplay loop muted>
+            <source src="{{ url_for('static', filename='images/background.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
 
-    <main>
-        <section class="hero">
-            <h2>Protecting Wildlife Through AI</h2>
-            <p>Monitor wildlife, detect intruders, and ensure conservation efforts with our advanced detection system.</p>
-            <a href="/dashboard" class="btn">Go to Dashboard</a>
-        </section>
-    </main>
+    <!-- Main Content -->
+    <div class="content">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/dashboard">Dashboard</a></li>
+                    <li><a href="/alerts">Alerts</a></li>
+                    <li><a href="/species">Species Gallery</a></li>
+                    <li><a href="/analytics">Analytics</a></li>
+                </ul>
+            </nav>
+            <h1>Wildlife Conservation System</h1>
+        </header>
 
-    <footer>
-        <p>&copy; 2025 Wildlife Conservation System</p>
-    </footer>
+        <main>
+            <section class="hero">
+                <h2>Protecting Wildlife Through AI</h2>
+                <p>Monitor wildlife, detect intruders, and ensure conservation efforts with our advanced detection system.</p>
+                <a href="/dashboard" class="btn">Go to Dashboard</a>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Wildlife Conservation System</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
 </body>
 </html>
