@@ -6,7 +6,8 @@ body {
     background-color: #f4f4f4;
     color: #333;
 }
-/*Background  */
+
+/* Background */
 #background-video {
     position: fixed;
     top: 0;
@@ -39,6 +40,13 @@ nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
 }
 
 /* Hero Section */
@@ -67,9 +75,14 @@ nav ul li a {
 .hero .btn {
     background-color: #4CAF50;
     color: white;
-    padding: 0.5rem 1rem;
+    padding: 0.7rem 1.5rem;
     text-decoration: none;
     border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.hero .btn:hover {
+    background-color: #388E3C;
 }
 
 /* Dashboard */
@@ -123,6 +136,11 @@ video {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.species-card:hover {
+    transform: scale(1.05);
 }
 
 .species-card img {
@@ -150,6 +168,11 @@ video {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.stat-card:hover {
+    transform: scale(1.05);
 }
 
 .stat-value {
