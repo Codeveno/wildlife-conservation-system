@@ -1,19 +1,19 @@
 DEEPSORT:
   MODEL_PATH: "model/deep_sort/deep/checkpoint/ckpt.t7"
-  MAX_DIST: 0.2                 # Maximum distance for matching
-  MIN_CONFIDENCE: 0.3           # Minimum detection confidence threshold
-  NMS_MAX_OVERLAP: 1.0          # Non-Maximum Suppression overlap threshold
-  MAX_IOU_DISTANCE: 0.7         # Maximum IoU distance for track updates
-  MAX_AGE: 30                   # Maximum frames to keep a track alive without detection
-  N_INIT: 3                     # Minimum number of detections before track initialization
-  NN_BUDGET: 100                # Maximum number of tracks the model keeps in memory
+  MAX_DIST: 0.2
+  MIN_CONFIDENCE: 0.3
+  NMS_MAX_OVERLAP: 1.0
+  MAX_IOU_DISTANCE: 0.7
+  MAX_AGE: 30
+  N_INIT: 3
+  NN_BUDGET: 100
 
 FEATURE_EXTRACTOR:
-  MODEL: "osnet_x1_0"           # Feature extractor model architecture
-  DEVICE: "cuda"                # Use GPU for faster inference (fallback to CPU if unavailable)
-  FP16: False                   # Enable or disable mixed precision
+  MODEL: "osnet_x1_0"
+  DEVICE: "cuda"
+  FP16: False
 
 TRACKING:
-  METRIC_TYPE: "cosine"         # Metric used for track association
-  CONF_THRESHOLD: 0.5           # Detection confidence threshold for initial filtering
-  IOU_THRESHOLD: 0.3            # IoU threshold for detection matching
+  METRIC_TYPE: "cosine"
+  CONF_THRESHOLD: 0.5
+  IOU_THRESHOLD: 0.3

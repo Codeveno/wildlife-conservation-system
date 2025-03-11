@@ -5,7 +5,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import random
 import smtplib
 from email.message import EmailMessage
-from dotenv import load_dotenv  # Add this import
+from dotenv import load_dotenv  
 
 # Load environment variables
 load_dotenv()

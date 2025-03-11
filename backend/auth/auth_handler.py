@@ -14,8 +14,8 @@ def generate_verification_code():
 
 # Email Sending Logic
 def send_verification_email(email, code):
-    sender_email = "samsono.odwori@gmail.com"  
-    sender_password = "430AMclub!"  
+    sender_email = "1realmakaveli@proton.me"  # Corrected email
+    sender_password = "430AMclub!"  # Corrected password
 
     msg = EmailMessage()
     msg['Subject'] = 'Wildlife Conservation System - Email Verification Code'
@@ -23,9 +23,14 @@ def send_verification_email(email, code):
     msg['To'] = email
     msg.set_content(f'Your verification code is: {code}')
 
-    with smtplib.SMTP_SSL('smtp.gmail.com', 465) as server:
-        server.login(sender_email, sender_password)
-        server.send_message(msg)
+    try:
+        with smtplib.SMTP('smtp.protonmail.com', 465) as server:
+            server.starttls()  # Ensures encrypted connection
+            server.login(sender_email, sender_password)
+            server.send_message(msg)
+        print("✅ Verification email sent successfully.")
+    except Exception as e:
+        print(f"❌ Failed to send email: {e}")
 
 # Save New User
 def create_user(username, email, password, verification_code):
@@ -51,5 +56,8 @@ def verify_email_code(email, code):
     if result and result[0] == code:
         cursor.execute('UPDATE Users SET verified = 1 WHERE email = %s', (email,))
         conn.commit()
+        conn.close()
         return True
+
+    conn.close()
     return False
