@@ -18,10 +18,10 @@ Base = declarative_base()
 # Corrected init_db function
 def init_db():
     try:
-        from backend.database import models  # Ensure models are imported before creating tables
+        from backend.database import models  
         Base.metadata.create_all(bind=engine)
         print("✅ Database tables created successfully.")
     except Exception as e:
         print(f"❌ Error initializing database: {e}")
     finally:
-        engine.dispose()  # Ensures the connection is closed properly
+        engine.dispose()  
