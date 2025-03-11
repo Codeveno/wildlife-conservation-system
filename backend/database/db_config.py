@@ -7,7 +7,7 @@ import pymysql
 DATABASE_URL = "mysql+pymysql://root:430AMclub!@localhost/wildlife_conservation"
 
 # Engine configuration
-engine = create_engine(DATABASE_URL)
+engine = create_engine(DATABASE_URL, pool_pre_ping=True)
 
 # Session configuration
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
@@ -18,8 +18,10 @@ Base = declarative_base()
 # Corrected init_db function
 def init_db():
     try:
-        from backend.database import models 
+        from backend.database import models  # Ensure models are imported before creating tables
         Base.metadata.create_all(bind=engine)
         print("✅ Database tables created successfully.")
     except Exception as e:
         print(f"❌ Error initializing database: {e}")
+    finally:
+        engine.dispose()  # Ensures the connection is closed properly
