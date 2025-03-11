@@ -1,3 +1,6 @@
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.dirname(__file__)))
 from flask import Flask, redirect, url_for
 from backend.routes.detection_routes import detection_bp
 from backend.routes.tracking_routes import tracking_bp
