@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Map View - Wildlife Conservation System</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Wildlife Movement Map</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="login.html">Logout</a>
+            </nav>
+        </header>
+
+        <section class="map-section">
+            <div id="map"></div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Wildlife Conservation System</p>
+        </footer>
+    </div>
+
+    <script>
+        // Initialize the map
+        var map = L.map('map').setView([-1.2921, 36.8219], 6);  // Default to Kenya region
+
+        // Add map tiles (OpenStreetMap for free)
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Sample wildlife locations (Buffalo, Elephant, Rhino, Zebra)
+        const wildlifeData = [
+            { name: "Buffalo", lat: -2.152, lng: 37.328, icon: "assets/images/buffalo.png" },
+            { name: "Elephant", lat: -1.205, lng: 36.812, icon: "assets/images/elephant.png" },
+            { name: "Rhino", lat: -3.422, lng: 38.567, icon: "assets/images/rhino.png" },
+            { name: "Zebra", lat: -0.473, lng: 36.963, icon: "assets/images/zebra.png" }
+        ];
+
+        // Add markers with custom icons
+        wildlifeData.forEach(animal => {
+            const icon = L.icon({
+                iconUrl: animal.icon,
+                iconSize: [30, 30],
+                iconAnchor: [15, 15]
+            });
+
+            L.marker([animal.lat, animal.lng], { icon: icon })
+                .addTo(map)
+                .bindPopup(`<b>${animal.name}</b>`);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Verification - Wildlife Conservation System</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Verify Your Email</h1>
+        <form method="POST" action="/verify-email">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="code">Verification Code:</label>
+            <input type="text" id="code" name="code" required>
+
+            <button type="submit">Verify</button>
+        </form>
+    </div>
+</body>
+</html>

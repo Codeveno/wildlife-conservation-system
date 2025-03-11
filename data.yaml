@@ -1,6 +1,0 @@
-train: /home/sam/Desktop/sammy/wildlife-conservation-system/data/african_wildlife/train/images
-val: /home/sam/Desktop/sammy/wildlife-conservation-system/data/african_wildlife/val/images
-
-nc: 4  # Number of classes
-names: ['buffalo', 'elephant', 'rhino', 'zebra']
-
