@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "wildlife-conservation-system",
+			"path": "."
+		}
+	],
+	"settings": {
+		"sqltools.connections": []
+	}
+}
